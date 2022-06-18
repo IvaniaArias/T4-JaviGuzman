@@ -1,0 +1,62 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ more_data.name_page }}{% endblock %}
+
+{% block body %}
+<div class="container">
+  <p align="center"><a href=vmd_timestamp ><button class=grey style="height:75px;width:150px">vmd timestamp</button></a></p>
+  <div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a href="#" class="active">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">6</a>
+    <a href="#">&raquo;</a>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>{{ more_data.bienvenida }}</h1>
+      {% if data.page == 1 %}
+      <h3> Página {{ data.page }}</h3>
+      <ul>
+          {% for ingredient in items %}
+          <h4><a href="{{ url_for('get_ingredient_id', ingredient_id=ingredient[0]) }}" class="nav-link">ID: {{ ingredient[0] }} - Name: {{ ingredient[1] }} - Price: {{ ingredient[2] }}</a></h4>
+          {% endfor %}
+      </ul>
+
+      {% elif data.page == 2 %}
+      <h3> Página {{ data.page }}</h3>
+      <ul>
+        {% for ingredient in items %}
+        <h4><a href="{{ url_for('get_ingredient_id', ingredient_id=ingredient[0]) }}" class="nav-link">ID: {{ ingredient[0] }} - Name: {{ ingredient[1] }} - Price: {{ ingredient[2] }}</a></h4>
+        {% endfor %}
+      </ul>
+
+      {% elif data.page == 3 %}
+      <h3> Página {{ data.page }}</h3>
+      <ul>
+        {% for ingredient in items %}
+        <h4><a href="{{ url_for('get_ingredient_id', ingredient_id=ingredient[0]) }}" class="nav-link">ID: {{ ingredient[0] }} - Name: {{ ingredient[1] }} - Price: {{ ingredient[2] }}</a></h4>
+        {% endfor %}
+      </ul>
+
+      {% elif data.page == 4 %}
+      <h3> Página {{ data.page }}</h3>
+      <ul>
+        {% for ingredient in items %}
+        <h4><a href="{{ url_for('get_ingredient_id', ingredient_id=ingredient[0]) }}" class="nav-link">ID: {{ ingredient[0] }} - Name: {{ ingredient[1] }} - Price: {{ ingredient[2] }}</a></h4>
+        {% endfor %}
+      </ul>
+
+      {% else %}
+      <h3> No hay número de página</h3>
+      <h2>No existen cursos...</h2>
+
+      {% endif %}
+    </div>  
+  </div>
+</div>
+{% endblock %}
+

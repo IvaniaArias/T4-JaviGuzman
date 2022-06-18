@@ -1,0 +1,24 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ more_data.name_page }}{% endblock %}
+
+{% block body %}
+<h1>{{ more_data.bienvenida }}</h1>
+
+<img src = "{{ data.img_url }}">
+<p>Id: {{ data.id }}</p>
+<p>Name: {{ data.name }}</p>
+<p>Description: {{ data.description }}</p>
+<p>Price: {{ data.price }}</p>
+<p>Size: {{ data.size }}</p>
+<p>Expiration: {{ data.expiration }}</p>
+<p>Category: {{ data.category }}</p>
+<p>Ingredients:</p>
+<ul>
+    {% for ingredient in items %}
+    <p><a href="{{ url_for('get_ingredient_id', ingredient_id=ingredient[0]) }}" class="nav-link">ID: {{ ingredient[0] }} - Name: {{ ingredient[1] }} - Quantity: {{ ingredient[2] }}</a></p>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+

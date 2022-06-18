@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ more_data.name_page }}{% endblock %}
+
+{% block body %}
+<h1>{{ more_data.bienvenida }}</h1>
+
+<p>Id: {{ data.id }}</p>
+<p>Name: {{ data.name }}</p>
+<p>Description: {{ data.description }}</p>
+<p>Price: {{ data.price }}</p>
+<p>Size: {{ data.size }}</p>
+<p>Expiration: {{ data.expiration }}</p>
+<p>Courses: </p>
+<ul>
+    {% for course in items %}
+    <p><a href="{{ url_for('get_course_id', course_id=course[0]) }}" class="nav-link">ID: {{ course[0] }} - Name: {{ course[1] }} - Category: {{ course[3] }} - Img_URL: {{ course[2] }}</a></p>
+    
+    {% endfor %}
+</ul>
+
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ more_data.name_page }}{% endblock %}
+
+{% block body %}
+<h1>{{ more_data.bienvenida }}</h1>
+{% if data.page == 1 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for course in items %}
+    <h4><a href="{{ url_for('get_course_id', course_id=course[0]) }}" class="nav-link">ID: {{ course[0] }} - Name: {{ course[1] }} - Price: {{ course[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% elif data.page == 2 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for course in items %}
+    <h4><a href="{{ url_for('get_course_id', course_id=course[0]) }}" class="nav-link">ID: {{ course[0] }} - Name: {{ course[1] }} - Price: {{ course[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% elif data.page == 3 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for course in items %}
+    <h4><a href="{{ url_for('get_course_id', course_id=course[0]) }}" class="nav-link">ID: {{ course[0] }} - Name: {{ course[1] }} - Price: {{ course[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% elif data.page == 4 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for course in items %}
+    <h4><a href="{{ url_for('get_course_id', course_id=course[0]) }}" class="nav-link">ID: {{ course[0] }} - Name: {{ course[1] }} - Price: {{ course[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% else %}
+<h3> No hay número de página</h3>
+<h2>No existen cursos...</h2>
+
+{% endif %}
+{% endblock %}
+

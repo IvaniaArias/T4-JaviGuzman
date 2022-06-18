@@ -1,0 +1,83 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ more_data.name_page }}{% endblock %}
+
+{% block body %}
+<h1>{{ more_data.bienvenida }}</h1>
+<form action="/trays">
+    <h3>Order Ascendent by</h3>
+    <input type="checkbox" name="sort" value="name">Name
+    <input type="checkbox" name="sort" value="price">Price
+    <input type="submit" name="order" value="asc" placeholder="Name">
+</form>
+<form action="/trays">
+    Order by
+    <input type="radio" name="sort" value="name" placeholder="Name">Name
+    <input type="radio" name="sort" value="price">Price
+    <input type="submit" name="order" value="desc">
+</form>
+<div class="align-buttons">
+    <form action="/trays">
+        <button type="submit" name="sort" value="name" class="btn btn-success">Order by Name</button>
+        <button type="submit" name="sort" value="price" class="btn btn-success">Order by Price</button>
+    </form>
+    <form action="/trays">
+        <!-- <input type="submit" name="sort" value="name"> -->
+        <button type="submit" name1="sort" value1="name" name2="order" value2="asc" class="btn btn-success">Order Ascendent</button>
+        <button type="submit" name="order" value="desc" class="btn btn-success">Order Descendent</button>
+    </form>
+</div>
+<div class="align-buttons">
+    <!-- <input type="submit" name="sort" value="name"> -->
+    <button type="submit" name1="sort" value1="name" name2="order" value2="asc" class="btn btn-success">Order Ascendent</button>
+    <button type="submit" name="order" value="desc" class="btn btn-success">Order Descendent</button>
+</div>
+<div class="pagination">
+    <form action="">
+        <a href="#">&laquo;</a>
+        <a><button type="submit" name="page" value="1">1</button></a>
+        <a><button type="submit" name="page" value="2">2</button></a>
+        <a><button type="submit" name="page" value="3">3</button></a>
+        <a><button type="submit" name="page" value="4">4</button></a>
+        <a href="#">&raquo;</a>
+    </form>
+</div>
+{% if data.page == 1 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for tray in items %}
+    <h4><a href="{{ url_for('get_tray_id', tray_id=tray[0]) }}" class="nav-link">ID: {{ tray[0] }} - Name: {{ tray[1] }} - Price: {{ tray[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% elif data.page == 2 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for tray in items %}
+    <h4><a href="{{ url_for('get_tray_id', tray_id=tray[0]) }}" class="nav-link">ID: {{ tray[0] }} - Name: {{ tray[1] }} - Price: {{ tray[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% elif data.page == 3 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for tray in items %}
+    <h4><a href="{{ url_for('get_tray_id', tray_id=tray[0]) }}" class="nav-link">ID: {{ tray[0] }} - Name: {{ tray[1] }} - Price: {{ tray[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% elif data.page == 4 %}
+<h3> Página {{ data.page }}</h3>
+<ul>
+    {% for tray in items %}
+    <h4><a href="{{ url_for('get_tray_id', tray_id=tray[0]) }}" class="nav-link">ID: {{ tray[0] }} - Name: {{ tray[1] }} - Price: {{ tray[2] }}</a></h4>
+    {% endfor %}
+</ul>
+
+{% else %}
+<h3> No hay número de página</h3>
+<h2>No existen cursos...</h2>
+
+{% endif %}
+{% endblock %}
+

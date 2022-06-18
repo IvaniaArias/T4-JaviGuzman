@@ -1,0 +1,70 @@
+
+body {
+    background-color: peru; 
+    /* background-image: url("https://img.freepik.com/free-photo/spices-black-background-space-text_169016-3118.jpg?w=740&t=st=1655465202~exp=1655465802~hmac=31ba5bc0384bb9097b3c5b6eff1cb4e6c14f394a1f48fd86fbce999f86cdfcef"); */
+    background-image: url("https://images.unsplash.com/photo-1574125704068-0cbbe08080ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0; 
+} 
+
+img {
+  max-width: 100%;
+  width: 200px;
+  height: 200px;
+  /* width: auto; */
+  /* height: auto; */
+  float: right;
+  margin: 3px;
+  margin-right: 50px;
+  padding: 3px;
+  border-radius: 25px;
+}
+
+.container {
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col-md-12 text-center{
+  text-align: center!important;
+  flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}

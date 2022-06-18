@@ -1,0 +1,17 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ more_data.name_page }}{% endblock %}
+
+{% block body %}
+<h1>{{ more_data.bienvenida }}</h1>
+
+<img src = "{{ data.img_url }}">
+<p>Id: {{ data.id }}</p>
+<p>Name: {{ data.name }}</p>
+<p>Description: {{ data.description }}</p>
+<p>Price: {{ data.price }}</p>
+<p>Size: {{ data.size }}</p>
+<p>Expiration: {{ data.expiration }}</p>
+
+{% endblock %}
+
